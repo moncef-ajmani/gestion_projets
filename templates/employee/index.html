@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{%block employees%}active{%endblock%}
+{% block title %}Employees  &nbsp;<a href="/employees/create" class="btn btn-outline-primary btn-sm">Créer un employee</a>{% endblock%}
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <td>Matricule</td>
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Date d'embauche</td>
+            <td>Grade</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>AA91461</td>
+            <td>Ajmani</td>
+            <td>Moncef</td>
+            <td>27/03/2025</td>
+            <td>Chef de projet</td>
+            <td class="actions">
+                <form action="/" method="post" id="dl">
+                    <a href="/employees/edit/1"><i class="fa fa-pencil text-primary"></i></a>&nbsp;
+                    <a role="button" onclick="document.getElementById('dl').submit()"><i class="fa fa-trash text-danger"></i></a>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

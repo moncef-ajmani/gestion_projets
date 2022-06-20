@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{%block projects%}active{%endblock%}
+
+{% block title %}New Project{% endblock %}
+
+{% block content %}
+<form action="/" method="post" class="mb-4">
+    <div class="section-title">Add New Project</div>
+    <div class="row p-3">
+        <div class="col-8">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Title</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Responsable</label>
+                    <select class="form-select" name="responsable" required>
+                        <option>Resp 1</option>
+                        <option>Resp 2</option>
+                        <option>Resp 3</option>
+                        <option>Resp 4</option>
+                    </select>
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Date de Debut</label>
+                    <input type="date" class="form-control" name="dd">
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Date de Livraison</label>
+                    <input type="date" class="form-control" name="df">
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Budget</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <label  class="col-form-label">Team</label>
+            <select class="form-select h-100" name="team[]" multiple required>
+                <option></option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+            </select>
+        </div>       
+        <div class="h-25">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

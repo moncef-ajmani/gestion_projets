@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block projects%}active{%endblock%}
+{% block title %}
+Liste des projets &nbsp;<a href="/projects/create" class="btn btn-outline-primary btn-sm">Créer un projet</a>
+{% endblock %}
+
+{%block content%}
+<table>
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Responsable</td>
+            <td>Budget</td>
+            <td>Créé le</td>
+            <td>Deadline</td>
+            <td>Taches</td>
+            <td>Statut</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Site Vitrine</td>
+            <td>Moncef Ajmani</td>
+            <td>10000</td>
+            <td>27/08/2022</td>
+            <td>27/09/2022</td>
+            <td>5</td>
+            <td><span class="badge bg-warning">En cours</span></td>
+            <td class="actions">
+                <form action="/" method="post" id="dl">
+                    <a href="/projects/show/1"><i class="fa fa-pencil text-primary"></i></a>&nbsp;
+                    <a role="button" onclick="document.getElementById('dl').submit()"><i class="fa fa-trash text-danger"></i></a>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

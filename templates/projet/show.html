@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{%block projects%}active{%endblock%}
+{% block title %}Project Title [#10]{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between mb-2">
+    <h5>Liste des taches</h5>
+    <a href="/taches/create" class="btn btn-outline-primary btn-sm">Créer une tache</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Type</td>
+            <td>Date debut</td>
+            <td>Date fin</td>
+            <td>Attribueé à</td>
+            <td>Statut</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>chaier de charges</td>
+            <td>Conception</td>
+            <td>20/04/2022</td>
+            <td>27/04/2022</td>
+            <td>Moncef Ajmani</td>
+            <td><span class="badge bg-warning">En cours</span></td>
+            <td class="actions">
+                <form action="/" method="post" id="dl">
+                    <a href="/taches/edit/1"><i class="fa fa-pencil text-primary"></i></a>&nbsp;
+                    <a role="button" onclick="document.getElementById('dl').submit()"><i class="fa fa-trash text-danger"></i></a>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<form action="/" method="post" class="mb-4 mt-4">
+    <div class="section-title">Infomations</div>
+    <div class="row p-3">
+        <div class="col-8">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Title</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Responsable</label>
+                    <select class="form-select" name="responsable" required>
+                        <option>Resp 1</option>
+                        <option>Resp 2</option>
+                        <option>Resp 3</option>
+                        <option>Resp 4</option>
+                    </select>
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Date de Debut</label>
+                    <input type="date" class="form-control" name="dd">
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Date de Livraison</label>
+                    <input type="date" class="form-control" name="df">
+                </div>
+                <div class="col-6 mb-3">
+                    <label  class="col-form-label">Budget</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <label  class="col-form-label">Team</label>
+            <select class="form-select h-100" name="team[]" multiple required>
+                <option></option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+                <option>Nom Prenom</option>
+            </select>
+        </div>       
+        <div class="h-25">
+            <button type="submit" class="btn btn-primary">Add New Project</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
